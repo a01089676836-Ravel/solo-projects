@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 1,
+  "sourceType": "synthetic_portfolio_fixture",
+  "sourceNote": "모든 점수와 KPI 입력값은 공고 업무를 설명하기 위한 합성 예시다. industrial-automation 내부 데이터나 실제 성과가 아니다.",
+  "referenceSources": [
+    {
+      "id": "job-posting-dt-2026",
+      "title": "2026년 하반기 신입사원 공개채용_경영지원",
+      "url": "https://industrial-automation.recruiter.co.kr/career/jobs/129138",
+      "role": "job_posting_reference",
+      "scope": "채용공고 내 DT 직무 섹션"
+    },
+    {
+      "id": "industry-official-dx-reference",
+      "title": "industrial-automation 인재채용 WHY industrial-automation 페이지",
+      "url": "https://www.industrial-automation.com/ko/recruit/intro",
+      "role": "company_recruiting_context_reference",
+      "scope": "회사·인재채용 일반 맥락; DT 직무 세부 근거 아님"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "dx-001",
+      "title": "AI·DX 과제 발굴·우선순위·로드맵 Copilot",
+      "problem": "부서별 개선 아이디어가 흩어져 있어 AI/DX 과제의 기대효과, 실행가능성, 데이터 준비도, 거버넌스 조건을 일관되게 비교하기 어렵다.",
+      "strategicFit": 5,
+      "businessImpact": 5,
+      "feasibility": 4,
+      "dataReadiness": 4,
+      "urgency": 4,
+      "governanceReadiness": 5,
+      "baselineAvailable": false,
+      "existingPortfolio": false,
+      "overlapRisk": "low",
+      "owner": "DX 기획 가상 담당",
+      "tags": ["strategy", "roadmap", "prioritization"],
+      "evidenceRefs": ["job-posting-dt-2026", "industry-official-dx-reference"],
+      "humanDecisionPoints": ["과제 목표 승인", "파일럿 예산·담당자 승인", "확대 여부 판단"],
+      "kpiHints": {
+        "objective": "아이디어 접수부터 파일럿 승인까지의 의사결정 품질과 리드타임을 개선한다.",
+        "leadingIndicator": "근거·데이터 준비도·담당자가 채워진 과제 카드 비율",
+        "outcomeIndicator": "과제 접수부터 파일럿 승인까지의 평균 리드타임",
+        "unit": "비율 / 일",
+        "baselineSource": "실제 업무 접수·승인 로그 측정 필요"
+      }
+    },
+    {
+      "id": "dx-002",
+      "title": "AX 업무 프로세스 최적화·거버넌스 Agent",
+      "problem": "업무 요청을 AI로 처리하더라도 적용 범위, 승인권자, 문서 버전, 감사 이력이 정리되지 않으면 현업 적용이 어렵다.",
+      "strategicFit": 5,
+      "businessImpact": 4,
+      "feasibility": 4,
+      "dataReadiness": 4,
+      "urgency": 4,
+      "governanceReadiness": 5,
+      "baselineAvailable": false,
+      "existingPortfolio": false,
+      "overlapRisk": "low",
+      "owner": "AX 운영 가상 담당",
+      "tags": ["ax", "process", "governance"],
+      "evidenceRefs": ["job-posting-dt-2026"],
+      "humanDecisionPoints": ["자동화 가능 범위 승인", "예외 처리 규칙 승인", "운영 전환 승인"],
+      "kpiHints": {
+        "objective": "반복 업무의 수작업 인계와 승인 지연을 줄이면서 통제 가능성을 유지한다.",
+        "leadingIndicator": "프로세스별 책임자·승인 게이트·예외 규칙이 정의된 비율",
+        "outcomeIndicator": "표준 프로세스의 처리 리드타임 또는 수작업 인계 횟수",
+        "unit": "비율 / 시간 / 회",
+        "baselineSource": "현행 프로세스 관찰과 업무 로그 측정 필요"
+      }
+    },
+    {
+      "id": "dx-003",
+      "title": "AI/DX 트렌드·선진사 벤치마킹 Radar",
+      "problem": "국내외 AI/DX 자료가 많지만 출처, 적용 조건, industrial-automation 업무와의 연결성이 정리되지 않으면 실행 가능한 인사이트로 이어지지 않는다.",
+      "strategicFit": 4,
+      "businessImpact": 4,
+      "feasibility": 5,
+      "dataReadiness": 4,
+      "urgency": 3,
+      "governanceReadiness": 4,
+      "baselineAvailable": false,
+      "existingPortfolio": false,
+      "overlapRisk": "low",
+      "owner": "기술 리서치 가상 담당",
+      "tags": ["trend", "benchmark", "research"],
+      "evidenceRefs": ["job-posting-dt-2026"],
+      "humanDecisionPoints": ["출처 신뢰도 검토", "적용 가능성 판단", "리서치 결과 공유 승인"],
+      "kpiHints": {
+        "objective": "트렌드 발견부터 내부 적용 후보로 검토하기까지의 시간을 단축한다.",
+        "leadingIndicator": "1차 출처와 적용 조건이 기록된 트렌드 카드 비율",
+        "outcomeIndicator": "벤치마킹 결과에서 파일럿 검토로 전환된 비율",
+        "unit": "비율 / 일",
+        "baselineSource": "리서치 산출물과 검토 이력 측정 필요"
+      }
+    },
+    {
+      "id": "dx-004",
+      "title": "스마트에너지 운영 Digital Twin-lite",
+      "problem": "에너지·설비 상태를 한 화면에서 보고 what-if 가정을 비교하면 운영 개선 후보를 찾는 데 도움이 되지만, 실제 제어까지 연결하면 안전·데이터 조건이 커진다.",
+      "strategicFit": 4,
+      "businessImpact": 5,
+      "feasibility": 3,
+      "dataReadiness": 3,
+      "urgency": 4,
+      "governanceReadiness": 4,
+      "baselineAvailable": false,
+      "existingPortfolio": false,
+      "overlapRisk": "medium",
+      "owner": "스마트에너지 가상 담당",
+      "tags": ["smart-energy", "digital-twin", "operations"],
+      "evidenceRefs": ["industry-official-dx-reference"],
+      "humanDecisionPoints": ["가정값 검토", "운영 적용 승인", "자동 제어 연결 금지 여부 확인"],
+      "kpiHints": {
+        "objective": "에너지 운영 후보의 효과와 데이터 조건을 비교하되 자동 제어는 수행하지 않는다.",
+        "leadingIndicator": "운영 시나리오별 데이터 커버리지와 가정 검토 완료율",
+        "outcomeIndicator": "단위 생산량당 에너지 사용량 또는 운영 개선 후보의 검증률",
+        "unit": "비율 / kWh·단위 / 비율",
+        "baselineSource": "설비·에너지 계측 데이터와 운영 기준선 측정 필요"
+      }
+    },
+    {
+      "id": "existing-001",
+      "title": "제조설비 이상대응·근거기반 유지보수 Agent",
+      "problem": "설비 관측값과 SOP 근거를 연결해 이상 상황에서 점검 순서와 사람 확인 지점을 제안한다.",
+      "strategicFit": 4,
+      "businessImpact": 5,
+      "feasibility": 3,
+      "dataReadiness": 3,
+      "urgency": 3,
+      "governanceReadiness": 5,
+      "baselineAvailable": false,
+      "existingPortfolio": true,
+      "overlapRisk": "high",
+      "owner": "기존 제조AI 프로젝트",
+      "tags": ["manufacturing", "anomaly", "maintenance"],
+      "evidenceRefs": ["industry-official-dx-reference"],
+      "humanDecisionPoints": ["현장 점검 승인", "복구 확인", "운영 전환 승인"],
+      "kpiHints": {
+        "objective": "기존 제조AI 프로젝트의 기술·신뢰성 근거를 보존한다.",
+        "leadingIndicator": "근거가 연결된 점검 계획 비율",
+        "outcomeIndicator": "현장 검증을 거친 복구 의사결정 리드타임",
+        "unit": "비율 / 시간",
+        "baselineSource": "기존 프로젝트의 검증 리포트와 실제 운영 데이터 필요"
+      }
+    }
+  ]
+}

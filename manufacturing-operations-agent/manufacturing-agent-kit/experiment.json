@@ -1,0 +1,12 @@
+{
+  "version": "ai4i-baseline-v1",
+  "csv": "data/raw/ai4i2020/ai4i2020.csv",
+  "sha256": "dc6630cd9b1f0f853922fad78a1b6436570d3f1ec863f1dd5c4340ac56bc8a8e",
+  "expectedRows": 10000,
+  "trainEnd": 6000,
+  "validationStart": 6101,
+  "validationEnd": 8000,
+  "testStart": 8101,
+  "normalValidationQuantile": 0.95,
+  "models": ["max_abs_z", "mean_squared_z"]
+}

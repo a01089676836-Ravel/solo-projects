@@ -1,0 +1,15 @@
+{
+  "name": "industrial-automation-dt-copilot",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test 05_자동검증테스트/*.test.mjs",
+    "demo": "node 04_프로그램코드/run-demo.mjs",
+    "check": "node 04_프로그램코드/run-demo.mjs --check",
+    "verify": "npm test && npm run demo && npm run check",
+    "start": "node 04_프로그램코드/server.mjs"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "reviewedAt": "2026-09-21T13:11:03.832Z",
+  "snapshot": {
+    "nodeVersion": "v24.19.0",
+    "codexVersion": "codex-cli 0.155.1",
+    "model": "gpt-6-astra",
+    "fileHashes": {
+      "config/agent-runtime.json": "a151d3716b5251c47f3b66b29cd65266513400b9fb572e2a67834eb31477b767",
+      "src/runtime-config.mjs": "ff4170d1548855fa23aca0534fbac8bbe20661539be3840c8332d2d120753795",
+      "src/agent-api.mjs": "abadada4f125f87d59788210bbf2c3cc68f72cac622e38ab4abd2a8f1269267f",
+      "src/reliable-pipeline.mjs": "d9e29eb21d771e4b1506d758aa8d2597720d4436d369209284d2e78b9a791590",
+      "src/skill-registry.mjs": "fbeb6e01f57fdd15e80f5cd862234ae7427793b5b8e800dc1388b3e781791103",
+      "agent-skills/manifest.json": "d15585d2fcadaffa97e12ce60c8f2b9384a468be41254fade72ce4d945d093dc",
+      "AGENTS.md": "989b48dd7591cf362ad96f43572041dd18b628eef82db74732a73f807050a79c",
+      "skill/runtime-maintenance/SKILL.md": "c85d247c38d51daff319d47eaabf89365cb16c2fb30993fc86ddfc0fb5e19c92",
+      "tools/check-maintenance.mjs": "57ac70f759affa7a0bd18af962afb4d95431491a62023423fb9464ef396ffe82",
+      "tools/offline-run.mjs": "e190dfa8428ac39b11ffab0c8f5fd923c0372cd47edfb9e8e3d8724af0d3c9ae",
+      "tools/local-agent-check.mjs": "92d868e9eced030c61ce799a4a3ca5f08617dc33fe803870af92299ac4f5c919",
+      "tools/reliability-comparison.mjs": "65fcb1f07a2da9f198d6f629baa9ee4194dcb98b0230c42995531e71426290ec",
+      "tests/astra-runtime.test.mjs": "dfc8b5b07548ac70d8165bb06172e21f22f6f873c68982e4d3fde9f65ef31b67",
+      "tests/maintenance.test.mjs": "6a6de7bd40c3d3055a822fda573c11a51700230f5d4fb1ec665839396738bb48",
+      "package.json": "5159905ef0d13b033fab711cd9b5d81159e02fcd614185a1a4dcb8215545c290"
+    }
+  },
+  "evidence": {
+    "scope": "offline runtime compatibility and maintenance workflow; not live readiness",
+    "sources": [
+      "https://developers.openai.com/api/docs/guides/latest-model",
+      "https://developers.openai.com/api/docs/models/gpt-6-astra",
+      "https://developers.openai.com/api/docs/guides/structured-outputs",
+      "https://developers.openai.com/api/docs/guides/error-codes"
+    ],
+    "tests": {
+      "npm_test": {
+        "passed": 75,
+        "failed": 0
+      },
+      "check_ps1": {
+        "existingPassed": 16,
+        "agentPassed": 50
+      },
+      "offlineHarness": {
+        "passed": 8,
+        "failed": 0
+      },
+      "offlineRun": {
+        "passed": 1,
+        "failed": 0,
+        "externalApiCalled": false
+      },
+      "localAgentCheck": {
+        "passed": 5,
+        "failed": 0,
+        "externalApiCalled": false
+      },
+      "reliabilityComparison": {
+        "adversarialCases": 5,
+        "referenceUnsafeAccepted": 5,
+        "currentUnsafeAccepted": 0
+      },
+      "maintenanceAfterWindowsFix": {
+        "passed": 3,
+        "failed": 0
+      },
+      "skillValidation": "passed",
+      "codexVersionProbe": "codex-cli 0.155.1",
+      "liveAstra": {
+        "status": "blocked",
+        "reason": "missing_api_key",
+        "liveVerified": false
+      }
+    },
+    "decision": "Keep Astra as requested. Added a no-cost offline fallback path and local Qwen check, plus a controlled reliability comparison showing current grounding rejects or sanitizes all 5 tested adversarial responses while the loose reference accepts all 5. Applied bounded strict structured requests, explicit evidence/SOP catalogs, credential separation, refusal/incomplete handling and on-resume maintenance. Live API verification remains blocked by credit_balance_exhausted; no background monitor or automatic successor activation was installed.",
+    "remaining": [
+      "Live Astra smoke test after local API key setup",
+      "Field SOP and physical hardware validation"
+    ]
+  },
+  "provenance": "Codex review record; checker does not independently verify source or test claims"
+}

@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "skills": [
+    {
+      "id": "verification-first",
+      "version": "1.0.0",
+      "purpose": "관측된 이벤트와 실제 후속 확인을 우선한다.",
+      "prompt": "관측된 event facts와 evidence만 사용하고, 데이터에 없는 센서·수치·고장 원인을 만들지 않는다. 이상 점수는 고장 확률이 아니다.",
+      "requiredInputs": ["event.state", "event.evidence", "event.limitations"],
+      "forbiddenActions": ["invent_measurements", "claim_confirmed_failure", "treat_score_as_probability"]
+    },
+    {
+      "id": "grounding-gate",
+      "version": "1.0.0",
+      "purpose": "Agent 출력이 승인된 이벤트 근거와 SOP에만 연결되도록 한다.",
+      "prompt": "허용된 evidence ID와 승인된 SOP ID만 선택한다. 자유 문장으로 새 근거·절차·원인을 추가하지 않는다. 근거가 없거나 충돌하면 보류한다.",
+      "requiredInputs": ["event.evidence", "approved_sop_index"],
+      "forbiddenActions": ["invent_evidence_id", "invent_sop", "ignore_conflict"]
+    },
+    {
+      "id": "safe-escalation",
+      "version": "1.0.0",
+      "purpose": "이상·경고·비상 상태에서 사람 확인과 읽기 전용 점검만 허용한다.",
+      "prompt": "설비 제어 명령을 만들지 말고, 상태와 승인된 점검 항목만 제시한다. 비정상 상태는 사람 확인을 요구한다.",
+      "requiredInputs": ["event.state", "event.actuator", "event.agentPlan"],
+      "forbiddenActions": ["issue_actuator_command", "auto_resume", "skip_human_confirmation"]
+    },
+    {
+      "id": "recovery-verification",
+      "version": "1.0.0",
+      "purpose": "조치 후 새 관측 window로 회복을 재검증한다.",
+      "prompt": "초기 알림을 정상화로 덮어쓰지 않는다. 후속 window가 정상이어도 재가동은 별도 사람 승인이 필요하며, 계속 이상이면 정지 유지·상향 보고한다.",
+      "requiredInputs": ["followup_window", "local_model"],
+      "forbiddenActions": ["resume_without_approval", "rewrite_initial_event", "infer_recovery_without_followup"]
+    }
+  ]
+}

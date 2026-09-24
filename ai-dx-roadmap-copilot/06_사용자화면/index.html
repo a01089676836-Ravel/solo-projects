@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI/DX 과제 의사결정 Pilot</title>
+  <style>
+    :root { color-scheme: light; font-family: system-ui, sans-serif; }
+    body { margin: 0; background: #f4f6f8; color: #17202a; }
+    main { max-width: 1040px; margin: 0 auto; padding: 28px 18px 60px; }
+    header, .panel, .card { background: white; border: 1px solid #dce2e8; border-radius: 14px; padding: 20px; box-shadow: 0 4px 18px #1b2a3a0d; }
+    header { margin-bottom: 16px; }
+    h1 { margin: 0 0 8px; font-size: 24px; }
+    h2 { margin-top: 0; font-size: 18px; }
+    .muted { color: #607080; }
+    .toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 16px; }
+    input, button { border: 1px solid #b8c3ce; border-radius: 8px; padding: 10px 12px; font: inherit; }
+    input { min-width: 260px; }
+    button { cursor: pointer; background: #124e78; color: white; border-color: #124e78; }
+    button.secondary { background: white; color: #124e78; }
+    #status { min-height: 24px; margin: 16px 0; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+    .card h3 { margin: 0 0 8px; font-size: 16px; }
+    .score { font-size: 28px; font-weight: 700; color: #124e78; }
+    .tag { display: inline-block; padding: 4px 8px; border-radius: 999px; background: #e9f2f8; color: #124e78; font-size: 12px; }
+    .card button { margin-top: 12px; font-size: 13px; }
+    .roadmap-item { border: 1px solid #e1e6eb; border-radius: 10px; padding: 12px; }
+    .roadmap-item h4 { margin: 0 0 6px; color: #124e78; }
+    .roadmap-item ul { margin: 8px 0 0; padding-left: 20px; }
+    .kpi-list { display: grid; gap: 10px; }
+    .kpi-item { border: 1px solid #e1e6eb; border-radius: 10px; padding: 12px; }
+    .kpi-item input { min-width: 120px; width: 25%; }
+    .kpi-item .source { min-width: 220px; width: 45%; }
+    .form-grid { display: grid; gap: 10px; }
+    .form-grid label, .score-grid label { display: grid; gap: 5px; font-size: 13px; font-weight: 600; }
+    .form-grid input, .form-grid textarea, .score-grid input { box-sizing: border-box; min-width: 0; width: 100%; }
+    .form-grid textarea { resize: vertical; }
+    .score-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; }
+    code { background: #eef1f4; border-radius: 4px; padding: 2px 5px; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>AI/DX 과제 발굴·로드맵·성과관리 Pilot</h1>
+      <p class="muted">합성 과제 카드를 기준으로 우선순위와 KPI 초안을 만들고, 사람의 승인 이력을 남기는 Phase 1 로컬 파일럿입니다.</p>
+      <div class="toolbar">
+        <label for="token">개발용 토큰</label>
+        <input id="token" type="password" value="local-demo-token" autocomplete="off">
+        <button id="run">샘플 과제 실행</button>
+        <button id="refresh" class="secondary">최근 실행 새로고침</button>
+      </div>
+    </header>
+    <div id="status" class="muted"></div>
+    <section class="panel">
+      <h2>새 과제 후보 입력</h2>
+      <p class="muted">샘플 후보에 사용자가 입력한 후보를 하나 더 넣어 같은 기준으로 비교합니다. 추가 공개자료의 제목과 URL을 입력하면 후보의 근거로 연결하며, 최종 결정은 사람이 합니다.</p>
+      <div class="form-grid">
+        <label for="custom-title">과제 제목<input id="custom-title" placeholder="예: 현장 문서 검색·요약 Copilot"></label>
+        <label for="custom-owner">예상 담당 조직<input id="custom-owner" placeholder="예: 생산기술팀"></label>
+        <label for="custom-problem">해결할 문제<textarea id="custom-problem" rows="3" placeholder="현재 어떤 반복 업무나 의사결정 지연을 줄일지 입력"></textarea></label>
+        <label for="custom-outcome">결과 KPI<input id="custom-outcome" placeholder="예: 문서 탐색 소요시간"></label>
+        <label for="custom-source-title">추가 근거 제목 (선택)<input id="custom-source-title" placeholder="예: 회사 공식 보고서 또는 업무 인터뷰 기록"></label>
+        <label for="custom-source-url">추가 근거 URL (선택)<input id="custom-source-url" type="url" placeholder="https://example.com/source"></label>
+        <div class="score-grid" aria-label="후보 점수">
+          <label for="custom-strategicFit">전략 적합성<input id="custom-strategicFit" type="number" min="1" max="5" step="1" value="4"></label>
+          <label for="custom-businessImpact">사업 영향<input id="custom-businessImpact" type="number" min="1" max="5" step="1" value="4"></label>
+          <label for="custom-feasibility">실현 가능성<input id="custom-feasibility" type="number" min="1" max="5" step="1" value="3"></label>
+          <label for="custom-dataReadiness">데이터 준비도<input id="custom-dataReadiness" type="number" min="1" max="5" step="1" value="3"></label>
+          <label for="custom-urgency">긴급성<input id="custom-urgency" type="number" min="1" max="5" step="1" value="3"></label>
+          <label for="custom-governanceReadiness">거버넌스 준비도<input id="custom-governanceReadiness" type="number" min="1" max="5" step="1" value="3"></label>
+        </div>
+        <button id="run-custom">입력 후보 포함해 실행</button>
+      </div>
+    </section>
+    <section class="panel">
+      <h2>실행 결과</h2>
+      <div id="runs" class="muted">아직 실행 결과가 없습니다.</div>
+    </section>
+  </main>
+  <script>
+    const token = document.querySelector('#token');
+    const status = document.querySelector('#status');
+    const runs = document.querySelector('#runs');
+    const headers = () => ({ authorization: `Bearer ${token.value}`, 'content-type': 'application/json' });
+    const newIdempotencyKey = () => globalThis.crypto?.randomUUID?.() || `${Date.now()}-${Math.random().toString(16).slice(2)}`;
+    const escapeHtml = value => String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
+
+    async function api(url, options = {}) {
+      const response = await fetch(url, { ...options, headers: { ...headers(), ...(options.headers || {}) } });
+      const body = await response.json();
+      if (!response.ok) throw new Error(body.message || body.error || `HTTP ${response.status}`);
+      return body;
+    }
+
+    function renderRun(run) {
+      const candidates = run.result.rankedCandidates.filter(item => item.eligibleForNextProject).slice(0, 3);
+      const kpis = run.result.kpiDrafts || [];
+      const sources = run.result.evidenceTrace?.referenceSources || [];
+      const roadmap = run.result.implementationRoadmap || [];
+      runs.innerHTML = `<p><span class="tag">run ${escapeHtml(run.runId)}</span> <span class="tag">사람 검토 필요</span></p><div class="grid">${candidates.map(item => `
+        <article class="card">
+          <div class="score">${escapeHtml(item.score)}점</div>
+          <h3>${escapeHtml(item.rank)}위 · ${escapeHtml(item.title)}</h3>
+          <p>${escapeHtml(item.problem)}</p>
+          <p class="muted">근거: ${escapeHtml(item.evidenceRefs.join(', '))}<br>사람 결정 지점: ${escapeHtml(item.humanDecisionPoints.join(', '))}<br>현재 결정: ${escapeHtml(item.decisionStatus || 'review_required')}${item.decisionReason ? ` · ${escapeHtml(item.decisionReason)}` : ''}</p>
+          <button data-decision="${escapeHtml(item.id)}" data-status="approved">승인 기록</button>
+          <button class="secondary" data-decision="${escapeHtml(item.id)}" data-status="paused">보류 기록</button>
+          <button class="secondary" data-decision="${escapeHtml(item.id)}" data-status="rejected">반려 기록</button>
+        </article>`).join('')}</div><h3>KPI 기준값</h3><div class="kpi-list">${kpis.map(kpi => {
+          const hasBaseline = kpi.baselineStatus === 'available_for_review';
+          return `<div class="kpi-item"><strong>${escapeHtml(kpi.candidateTitle)}</strong><p>${escapeHtml(kpi.outcomeIndicator)}</p>${hasBaseline
+            ? `<p class="muted">기준값: ${escapeHtml(kpi.baselineValue)} ${escapeHtml(kpi.baselineUnit)} · 출처: ${escapeHtml(kpi.baselineSource)}</p>`
+            : `<input data-baseline-value="${escapeHtml(kpi.candidateId)}" type="number" step="any" placeholder="기준값"><input class="source" data-baseline-source="${escapeHtml(kpi.candidateId)}" placeholder="측정 출처"><button data-baseline="${escapeHtml(kpi.candidateId)}">기준값 저장</button>`}</div>`;
+        }).join('')}</div><h3>30·60·90일 실행 로드맵</h3><div class="grid">${roadmap.map(phase => `<article class="roadmap-item"><h4>${escapeHtml(phase.phase)} · ${escapeHtml(phase.goal)}</h4><ul>${phase.deliverables.map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ul><p class="muted">사람 승인 지점: ${escapeHtml(phase.humanGate)}</p></article>`).join('')}</div><h3>근거 자료</h3><ul>${sources.map(source => `<li><a href="${escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(source.title)}</a> <span class="muted">(${escapeHtml(source.id)})</span></li>`).join('')}</ul>`;
+      document.querySelectorAll('[data-decision]').forEach(button => button.addEventListener('click', async () => {
+        const statusLabel = { approved: '승인', paused: '보류', rejected: '반려' }[button.dataset.status];
+        const reason = window.prompt(`${statusLabel} 사유를 입력하세요`, `MVP 결과를 검토한 뒤 ${statusLabel} 판단`);
+        if (!reason) return;
+        try {
+          await api(`/v1/runs/${encodeURIComponent(run.runId)}/decisions`, { method: 'POST', body: JSON.stringify({ candidateId: button.dataset.decision, status: button.dataset.status, reason }) });
+          status.textContent = `사람의 ${statusLabel} 판단 이력이 저장되었습니다.`;
+          await loadRuns();
+        } catch (error) { status.textContent = `오류: ${error.message}`; }
+      }));
+      document.querySelectorAll('[data-baseline]').forEach(button => button.addEventListener('click', async () => {
+        const candidateId = button.dataset.baseline;
+        const valueInput = document.querySelector(`[data-baseline-value="${CSS.escape(candidateId)}"]`);
+        const sourceInput = document.querySelector(`[data-baseline-source="${CSS.escape(candidateId)}"]`);
+        const kpi = kpis.find(item => item.candidateId === candidateId);
+        const value = Number(valueInput.value);
+        if (!Number.isFinite(value) || !sourceInput.value.trim()) { status.textContent = '기준값과 측정 출처를 입력하세요.'; return; }
+        try {
+          await api(`/v1/runs/${encodeURIComponent(run.runId)}/baselines`, { method: 'POST', body: JSON.stringify({ candidateId, metric: kpi.outcomeIndicator, value, unit: kpi.unit, source: sourceInput.value }) });
+          status.textContent = 'KPI 기준값과 출처가 저장되었습니다.';
+          await loadRuns();
+        } catch (error) { status.textContent = `오류: ${error.message}`; }
+      }));
+    }
+
+    async function loadRuns() {
+      const body = await api('/v1/runs');
+      if (!body.runs.length) { runs.textContent = '아직 실행 결과가 없습니다.'; return; }
+      renderRun(body.runs[0]);
+    }
+
+    function buildCustomCandidate() {
+      const title = document.querySelector('#custom-title').value.trim();
+      const owner = document.querySelector('#custom-owner').value.trim() || '사용자 입력 조직';
+      const problem = document.querySelector('#custom-problem').value.trim();
+      const outcomeIndicator = document.querySelector('#custom-outcome').value.trim();
+      const sourceTitle = document.querySelector('#custom-source-title').value.trim();
+      const sourceUrl = document.querySelector('#custom-source-url').value.trim();
+      if (!title || !problem || !outcomeIndicator) throw new Error('과제 제목, 해결할 문제, 결과 KPI를 입력하세요.');
+      if (Boolean(sourceTitle) !== Boolean(sourceUrl)) throw new Error('추가 근거 제목과 URL을 함께 입력하세요.');
+      const score = id => Number(document.querySelector(`#${id}`).value);
+      const scores = {
+        strategicFit: score('custom-strategicFit'),
+        businessImpact: score('custom-businessImpact'),
+        feasibility: score('custom-feasibility'),
+        dataReadiness: score('custom-dataReadiness'),
+        urgency: score('custom-urgency'),
+        governanceReadiness: score('custom-governanceReadiness')
+      };
+      if (Object.values(scores).some(value => !Number.isInteger(value) || value < 1 || value > 5)) {
+        throw new Error('점수는 모두 1~5 사이의 정수로 입력하세요.');
+      }
+      const runStamp = Date.now();
+      const sourceId = sourceTitle ? `custom-source-${runStamp}` : 'job-posting-dt-2026';
+      const additionalReferenceSources = sourceTitle ? [{ id: sourceId, title: sourceTitle, url: sourceUrl, role: 'user_supplied_reference' }] : [];
+      return {
+        additionalReferenceSources,
+        additionalCandidate: {
+        id: `custom-${runStamp}`,
+        title,
+        problem,
+        owner,
+        ...scores,
+        evidenceRefs: [sourceId],
+        humanDecisionPoints: ['과제 목표와 데이터 범위 승인', '파일럿 추진 여부 승인'],
+        baselineAvailable: false,
+        existingPortfolio: false,
+        overlapRisk: 'low',
+        tags: ['custom-input'],
+        kpiHints: {
+          objective: `${title}의 실행 가능성과 성과를 검증한다.`,
+          leadingIndicator: '근거·담당자·측정방법이 채워진 후보 카드 비율',
+          outcomeIndicator,
+          unit: '일 / 비율',
+          baselineSource: '실제 업무 로그 측정 필요'
+        }
+        }
+      };
+    }
+
+    document.querySelector('#run').addEventListener('click', async () => {
+      status.textContent = '샘플 과제를 평가하는 중...';
+      try { const body = await api('/v1/runs', { method: 'POST', headers: { 'idempotency-key': newIdempotencyKey() }, body: JSON.stringify({ useFixture: true }) }); renderRun(body); status.textContent = '실행 완료. 최종 결정은 사람이 합니다.'; }
+      catch (error) { status.textContent = `오류: ${error.message}`; }
+    });
+    document.querySelector('#run-custom').addEventListener('click', async () => {
+      status.textContent = '입력 후보를 샘플 후보와 비교하는 중...';
+      try {
+        const customRun = buildCustomCandidate();
+        const body = await api('/v1/runs', { method: 'POST', headers: { 'idempotency-key': newIdempotencyKey() }, body: JSON.stringify({ useFixture: true, ...customRun }) });
+        renderRun(body);
+        status.textContent = '입력 후보 포함 실행 완료. 점수와 KPI는 사람 검토용 초안입니다.';
+      } catch (error) { status.textContent = `오류: ${error.message}`; }
+    });
+    document.querySelector('#refresh').addEventListener('click', () => loadRuns().catch(error => { status.textContent = `오류: ${error.message}`; }));
+    loadRuns().catch(() => {});
+  </script>
+</body>
+</html>

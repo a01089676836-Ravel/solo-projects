@@ -1,0 +1,178 @@
+{
+  "version": "ai4i-baseline-v1",
+  "synthetic": true,
+  "task": "tabular normal-reference anomaly scoring",
+  "splitPolicy": "ordered UDI blocks; 100-row gaps; no verified timestamp or independent machine/run identity",
+  "thresholdPolicy": "score > normal-validation nearest-rank 95th percentile; no test tuning",
+  "features": [
+    "Air temperature [K]",
+    "Process temperature [K]",
+    "Rotational speed [rpm]",
+    "Torque [Nm]",
+    "Tool wear [min]"
+  ],
+  "stats": [
+    {
+      "feature": "Air temperature [K]",
+      "mean": 300.278798955613,
+      "std": 2.2811788179452264
+    },
+    {
+      "feature": "Process temperature [K]",
+      "mean": 309.90557006092155,
+      "std": 1.6727593645652408
+    },
+    {
+      "feature": "Rotational speed [rpm]",
+      "mean": 1542.0715404699738,
+      "std": 167.18599451466253
+    },
+    {
+      "feature": "Torque [Nm]",
+      "mean": 39.515630983463815,
+      "std": 9.383783915935608
+    },
+    {
+      "feature": "Tool wear [min]",
+      "mean": 107.77145343777198,
+      "std": 63.29907311863763
+    }
+  ],
+  "splits": {
+    "train": {
+      "rows": 6000,
+      "positives": 255,
+      "firstUDI": 1,
+      "lastUDI": 6000
+    },
+    "validation": {
+      "rows": 1900,
+      "positives": 43,
+      "firstUDI": 6101,
+      "lastUDI": 8000
+    },
+    "test": {
+      "rows": 1900,
+      "positives": 38,
+      "firstUDI": 8101,
+      "lastUDI": 10000
+    },
+    "gap": {
+      "rows": 200,
+      "positives": 3,
+      "firstUDI": 6001,
+      "lastUDI": 8100
+    }
+  },
+  "audit": {
+    "rows": 10000,
+    "duplicateProductIds": 0,
+    "targetDisagreements": 27,
+    "targetDisagreementUDIs": [
+      1222,
+      1303,
+      1438,
+      1749,
+      2073,
+      2560,
+      2750,
+      3066,
+      3453,
+      4045,
+      4685,
+      5472,
+      5490,
+      5496,
+      5510,
+      5537,
+      5554,
+      5640,
+      5942,
+      6092,
+      6479,
+      6914,
+      6961,
+      7489,
+      7869,
+      8507,
+      9016
+    ]
+  },
+  "models": [
+    {
+      "model": "max_abs_z",
+      "threshold": 2.308377927531361,
+      "validation": {
+        "rows": 1900,
+        "positives": 43,
+        "tp": 22,
+        "fp": 92,
+        "tn": 1765,
+        "fn": 21,
+        "precision": 0.19298245614035087,
+        "recall": 0.5116279069767442,
+        "falsePositiveRate": 0.04954227248249865,
+        "averagePrecision": 0.2653833549876171,
+        "prevalence": 0.022631578947368423
+      },
+      "test": {
+        "rows": 1900,
+        "positives": 38,
+        "tp": 15,
+        "fp": 59,
+        "tn": 1803,
+        "fn": 23,
+        "precision": 0.20270270270270271,
+        "recall": 0.39473684210526316,
+        "falsePositiveRate": 0.03168635875402793,
+        "averagePrecision": 0.16624639988575188,
+        "prevalence": 0.02
+      }
+    },
+    {
+      "model": "mean_squared_z",
+      "threshold": 1.9719411934900144,
+      "validation": {
+        "rows": 1900,
+        "positives": 43,
+        "tp": 20,
+        "fp": 92,
+        "tn": 1765,
+        "fn": 23,
+        "precision": 0.17857142857142858,
+        "recall": 0.46511627906976744,
+        "falsePositiveRate": 0.04954227248249865,
+        "averagePrecision": 0.24196995039621877,
+        "prevalence": 0.022631578947368423
+      },
+      "test": {
+        "rows": 1900,
+        "positives": 38,
+        "tp": 16,
+        "fp": 75,
+        "tn": 1787,
+        "fn": 22,
+        "precision": 0.17582417582417584,
+        "recall": 0.42105263157894735,
+        "falsePositiveRate": 0.040279269602577876,
+        "averagePrecision": 0.15047687157973869,
+        "prevalence": 0.02
+      }
+    }
+  ],
+  "limitations": [
+    "Synthetic data, not field validation",
+    "UDI is not elapsed time; no event recall, lead time or alarms/day claims",
+    "Failure labels used only to select normal train/calibration rows and evaluate scores",
+    "Failure-mode flags and identifiers are excluded from model features",
+    "Block gaps do not prove run independence; no automatic model winner selection",
+    "Normal-reference scores are not calibrated failure probabilities"
+  ],
+  "provenance": {
+    "generatedAt": "2026-09-06T18:47:35.326Z",
+    "node": "v24.19.0",
+    "datasetSHA256": "dc6630cd9b1f0f853922fad78a1b6436570d3f1ec863f1dd5c4340ac56bc8a8e",
+    "configSHA256": "b84e2a7278cd85c2ed88fd0fcf6cf6c37f7098b7c5b37f89d39498e4123f34af",
+    "codeSHA256": "a2331d7142073bc5377f99718dc298a2624379c82703b9984f6443ea04875690"
+  }
+}

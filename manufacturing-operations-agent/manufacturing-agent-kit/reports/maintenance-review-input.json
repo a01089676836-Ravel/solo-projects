@@ -1,0 +1,23 @@
+{
+  "scope": "offline runtime compatibility and maintenance workflow; not live readiness",
+  "sources": [
+    "https://developers.openai.com/api/docs/guides/latest-model",
+    "https://developers.openai.com/api/docs/models/gpt-6-astra",
+    "https://developers.openai.com/api/docs/guides/structured-outputs",
+    "https://developers.openai.com/api/docs/guides/error-codes"
+  ],
+  "tests": {
+    "npm_test": { "passed": 75, "failed": 0 },
+    "check_ps1": { "existingPassed": 16, "agentPassed": 50 },
+    "offlineHarness": { "passed": 8, "failed": 0 },
+    "offlineRun": { "passed": 1, "failed": 0, "externalApiCalled": false },
+    "localAgentCheck": { "passed": 5, "failed": 0, "externalApiCalled": false },
+    "reliabilityComparison": { "adversarialCases": 5, "referenceUnsafeAccepted": 5, "currentUnsafeAccepted": 0 },
+    "maintenanceAfterWindowsFix": { "passed": 3, "failed": 0 },
+    "skillValidation": "passed",
+    "codexVersionProbe": "codex-cli 0.155.1",
+    "liveAstra": { "status": "blocked", "reason": "missing_api_key", "liveVerified": false }
+  },
+  "decision": "Keep Astra as requested. Added a no-cost offline fallback path and local Qwen check, plus a controlled reliability comparison showing current grounding rejects or sanitizes all 5 tested adversarial responses while the loose reference accepts all 5. Applied bounded strict structured requests, explicit evidence/SOP catalogs, credential separation, refusal/incomplete handling and on-resume maintenance. Live API verification remains blocked by credit_balance_exhausted; no background monitor or automatic successor activation was installed.",
+  "remaining": ["Live Astra smoke test after local API key setup", "Field SOP and physical hardware validation"]
+}

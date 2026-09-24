@@ -1,0 +1,15 @@
+{
+  "status": "failed",
+  "liveVerified": false,
+  "apiError": {
+    "code": "credit_balance_exhausted",
+    "type": "insufficient_quota"
+  },
+  "reason": "api_http_429",
+  "model": null,
+  "mode": "fallback",
+  "latencyMs": 557,
+  "usage": null,
+  "checkedAt": "2026-09-21T12:42:53.459Z",
+  "scope": "one synthetic incident; not field validation"
+}

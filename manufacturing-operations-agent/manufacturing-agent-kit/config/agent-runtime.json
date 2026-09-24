@@ -1,0 +1,12 @@
+{
+  "model": "gpt-6-astra",
+  "baseUrl": "https://api.openai.com/v1",
+  "timeoutMs": 60000,
+  "reasoningEffort": "low",
+  "maxCompletionTokens": 2048,
+  "officialDocs": [
+    "https://developers.openai.com/api/docs/guides/latest-model",
+    "https://developers.openai.com/api/docs/guides/structured-outputs",
+    "https://developers.openai.com/api/docs/models/gpt-6-astra"
+  ]
+}

@@ -1,0 +1,16 @@
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+data/raw/
+*.sqlite
+*.sqlite-journal
+*.sqlite-wal
+*.sqlite-shm
+*.db
+artifacts/
+tools/local-llm/bin/
+tools/local-llm/models/
+tools/local-llm/*.zip
+tools/local-llm/*.log

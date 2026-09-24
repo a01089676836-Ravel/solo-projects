@@ -1,0 +1,27 @@
+{
+  "name": "manufacturing-agent-kit",
+  "private": true,
+  "type": "module",
+  "engines": { "node": "24.19.0" },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "baseline": "node src/baseline.mjs",
+    "import:events": "node src/import-events.mjs",
+    "start": "node src/server.mjs",
+    "agent:demo": "node src/agent-harness.mjs",
+    "agent:api-config": "node --env-file-if-exists=.env src/agent-api.mjs --config",
+    "agent:run": "node --env-file-if-exists=.env src/agent-api.mjs",
+    "agent:smoke": "node --env-file-if-exists=.env tools/smoke-astra.mjs",
+    "agent:offline-run": "node tools/offline-run.mjs",
+    "agent:local-check": "node tools/local-agent-check.mjs",
+    "agent:reliability-compare": "node tools/reliability-comparison.mjs",
+    "maintenance:check": "node tools/check-maintenance.mjs",
+    "agent:harness": "node tools/reliability-harness.mjs",
+    "pipeline:check": "node --test tests/reliable-pipeline.test.mjs",
+    "llm:verify": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/verify-local-llm.ps1",
+    "agent:local-llm": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/start-local-llm.ps1",
+    "agent:local-run": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/run-local-agent.ps1",
+    "agent:audit": "node --env-file-if-exists=.env tools/audit-agent.mjs",
+    "mode:baseline": "node src/tep-mode-demo.mjs"
+  }
+}

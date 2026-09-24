@@ -1,0 +1,196 @@
+{
+  "source": "data/raw/tep/manifest.json",
+  "rows": 9003,
+  "modes": [
+    "MODE_1",
+    "MODE_3",
+    "MODE_4"
+  ],
+  "trainRows": 7200,
+  "holdoutRows": 1803,
+  "comparison": {
+    "modeAware": {
+      "rows": 1803,
+      "falseAlarms": 32,
+      "falseAlarmRate": 0.01774819744869662,
+      "unknownMode": 0,
+      "byMode": {
+        "MODE_1": {
+          "rows": 601,
+          "falseAlarms": 30,
+          "unknownMode": 0,
+          "falseAlarmRate": 0.04991680532445923
+        },
+        "MODE_3": {
+          "rows": 601,
+          "falseAlarms": 2,
+          "unknownMode": 0,
+          "falseAlarmRate": 0.0033277870216306157
+        },
+        "MODE_4": {
+          "rows": 601,
+          "falseAlarms": 0,
+          "unknownMode": 0,
+          "falseAlarmRate": 0
+        }
+      }
+    },
+    "global": {
+      "rows": 1803,
+      "falseAlarms": 0,
+      "falseAlarmRate": 0,
+      "unknownMode": 0,
+      "byMode": {
+        "MODE_1": {
+          "rows": 601,
+          "falseAlarms": 0,
+          "unknownMode": 0,
+          "falseAlarmRate": 0
+        },
+        "MODE_3": {
+          "rows": 601,
+          "falseAlarms": 0,
+          "unknownMode": 0,
+          "falseAlarmRate": 0
+        },
+        "MODE_4": {
+          "rows": 601,
+          "falseAlarms": 0,
+          "unknownMode": 0,
+          "falseAlarmRate": 0
+        }
+      }
+    },
+    "temporal": {
+      "options": {
+        "persistenceRows": 3,
+        "transitionGraceRows": 2
+      },
+      "modeAware": {
+        "rows": 1803,
+        "evaluableRows": 1803,
+        "anomalyRows": 10,
+        "pendingRows": 22,
+        "modeTransitionRows": 0,
+        "unknownMode": 0,
+        "falseAlarmRate": 0.005546311702717693,
+        "alarmEpisodes": 4,
+        "persistenceRows": 3,
+        "transitionGraceRows": 2,
+        "byMode": {
+          "MODE_1": {
+            "rows": 601,
+            "evaluableRows": 601,
+            "anomalyRows": 10,
+            "pendingRows": 20,
+            "modeTransitionRows": 0,
+            "unknownMode": 0,
+            "falseAlarmRate": 0.016638935108153077
+          },
+          "MODE_3": {
+            "rows": 601,
+            "evaluableRows": 601,
+            "anomalyRows": 0,
+            "pendingRows": 2,
+            "modeTransitionRows": 0,
+            "unknownMode": 0,
+            "falseAlarmRate": 0
+          },
+          "MODE_4": {
+            "rows": 601,
+            "evaluableRows": 601,
+            "anomalyRows": 0,
+            "pendingRows": 0,
+            "modeTransitionRows": 0,
+            "unknownMode": 0,
+            "falseAlarmRate": 0
+          }
+        }
+      },
+      "global": {
+        "rows": 1803,
+        "evaluableRows": 1803,
+        "anomalyRows": 0,
+        "pendingRows": 0,
+        "modeTransitionRows": 0,
+        "unknownMode": 0,
+        "falseAlarmRate": 0,
+        "alarmEpisodes": 0,
+        "persistenceRows": 3,
+        "transitionGraceRows": 2,
+        "byMode": {
+          "MODE_1": {
+            "rows": 601,
+            "evaluableRows": 601,
+            "anomalyRows": 0,
+            "pendingRows": 0,
+            "modeTransitionRows": 0,
+            "unknownMode": 0,
+            "falseAlarmRate": 0
+          },
+          "MODE_3": {
+            "rows": 601,
+            "evaluableRows": 601,
+            "anomalyRows": 0,
+            "pendingRows": 0,
+            "modeTransitionRows": 0,
+            "unknownMode": 0,
+            "falseAlarmRate": 0
+          },
+          "MODE_4": {
+            "rows": 601,
+            "evaluableRows": 601,
+            "anomalyRows": 0,
+            "pendingRows": 0,
+            "modeTransitionRows": 0,
+            "unknownMode": 0,
+            "falseAlarmRate": 0
+          }
+        }
+      }
+    }
+  },
+  "comparisonDecision": {
+    "status": "inconclusive",
+    "reason": "normal_holdout_only_no_fault_recall_or_detection_lead_time",
+    "nextEvidence": [
+      "independent normal runs",
+      "fault scenarios with onset labels",
+      "mode transition cases"
+    ]
+  },
+  "virtualMes": {
+    "source": "virtual-mes-benchmark",
+    "operationMode": "SIMULATE",
+    "equipmentId": "tep-simulation-equipment",
+    "contexts": [
+      {
+        "runId": "tep-mode_1-normal-50h",
+        "processModeId": "MODE_1",
+        "workOrderId": "WO-TEP-MODE_1",
+        "lotId": "LOT-TEP-tep-mode_1-normal-50h",
+        "operationId": "OP-TEP-CONTINUOUS"
+      },
+      {
+        "runId": "tep-mode_3-normal-50h",
+        "processModeId": "MODE_3",
+        "workOrderId": "WO-TEP-MODE_3",
+        "lotId": "LOT-TEP-tep-mode_3-normal-50h",
+        "operationId": "OP-TEP-CONTINUOUS"
+      },
+      {
+        "runId": "tep-mode_4-normal-50h",
+        "processModeId": "MODE_4",
+        "workOrderId": "WO-TEP-MODE_4",
+        "lotId": "LOT-TEP-tep-mode_4-normal-50h",
+        "operationId": "OP-TEP-CONTINUOUS"
+      }
+    ]
+  },
+  "limitations": [
+    "Tennessee Eastman은 화학공정 시뮬레이션이며 반도체 FAB 데이터가 아닙니다.",
+    "현재 선택 범위는 모드별 정상 trajectory 하나이므로 독립 run 일반화 증거가 아닙니다.",
+    "정상 holdout은 시간 후반부이며 fault 성능 평가는 아직 포함하지 않았습니다.",
+    "persistence와 모드 전환 보류는 운영 판단 규칙의 검증이지 fault 탐지 성능의 증거가 아닙니다."
+  ]
+}

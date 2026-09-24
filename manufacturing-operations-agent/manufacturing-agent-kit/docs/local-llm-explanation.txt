@@ -1,0 +1,31 @@
+제조 설비 이상탐지 Agent 구현 방향 설명
+
+1. 구현 목적
+- 온도 센서에 인위적으로 열을 가하거나 초음파·카메라·모터·서보 상태에 이상을 주었을 때, 이를 기록하고 이상 여부와 안전 조치를 설명하는 Agent를 만들었습니다.
+- LLM이 안전 정지를 직접 결정하지 않도록, 감지와 제어는 로컬 규칙/FSM이 맡고 Agent는 근거 기반 설명과 점검 절차를 맡도록 분리했습니다.
+
+2. 데이터 수집과 이상탐지
+- 실제 센서와 모의 시나리오가 같은 observation schema를 사용합니다.
+- 온도, 초음파 거리·주파수·에코 품질, 카메라 사람·거리, 모터·서보 피드백, LED·버저 상태, 채널별 health를 같은 runId로 JSONL에 저장합니다.
+- 정상 운전 데이터를 학습한 뒤 최신 독립 run을 홀드아웃하여 오탐률을 확인하고, IQR 감사로 입력 이상치 후보를 따로 표시합니다.
+- UCI AI4I 2020 공개 데이터는 제조 이상탐지 기준선 검증에 사용하고, 실제 센서 데이터는 별도 현장 수집 대상으로 둡니다.
+
+3. 안전 제어와 Agent 흐름
+- 센서 입력 → 특징값 생성 → 정상 기준 이상 점수 → 안전 FSM → LED·버저·서보 명령 순서로 처리합니다.
+- FSM은 NORMAL, ANOMALY, WARNING, EMERGENCY 상태를 결정합니다.
+- 구조화된 사건과 evidence를 만든 뒤 승인된 SOP를 검색하고, Agent가 작업자에게 확인할 점검 항목을 제안합니다.
+
+4. 오픈 LLM을 연결한 이유와 방식
+- Qwen2.5-0.5B-Instruct GGUF는 가벼운 오픈 모델이며 llama.cpp로 로컬 OpenAI 호환 API를 만들었습니다.
+- 원격/로컬 LLM은 자유 문장으로 제어하지 않고, JSON Schema로 상태·evidence ID·SOP ID만 선택하게 합니다.
+- 선택된 ID가 실제 사건과 승인 SOP에 존재하는지 grounding gate로 재검증합니다.
+- 서버 오류, 시간 초과, 잘못된 JSON은 결정적 로컬 SOP Agent로 fallback합니다.
+
+5. 실제 실행 결과와 다음 배포 방향
+- normal, temperature_rise, motion_fault, person_emergency 시나리오에서 Qwen remote_api와 grounding gate 통과를 확인했습니다.
+- 현재는 PC에서 실행한 상태이며, Jetson 배포 시 센서 드라이버·수집기·FSM·액추에이터 제어를 Jetson에 옮깁니다.
+- LLM은 PC/서버에 둘 수 있고, 네트워크가 끊겨도 Jetson의 안전 FSM은 독립 동작하도록 설계합니다.
+
+실행 명령
+- 서버 시작: npm.cmd run agent:local-llm
+- 시나리오 실행: npm.cmd run agent:local-run -- temperature_rise

@@ -1,0 +1,22 @@
+{
+  "files": [
+    {
+      "mode": "MODE_1",
+      "rows": 3001,
+      "output": "mode_1_normal.jsonl",
+      "sha256": "9ccdc912cd9aacf23bc8496ecbd1cff075d1e5dfc983000cca068cd467879ec5"
+    },
+    {
+      "mode": "MODE_3",
+      "rows": 3001,
+      "output": "mode_3_normal.jsonl",
+      "sha256": "9487863014285afb2ebd79d6254b4943d369bfbb13d65cb8c12ab06932c170e2"
+    },
+    {
+      "mode": "MODE_4",
+      "rows": 3001,
+      "output": "mode_4_normal.jsonl",
+      "sha256": "6bf1673ab56babec52e017e3d57f027a6d982b3e2a14ddedc1873ccdd4431f46"
+    }
+  ]
+}

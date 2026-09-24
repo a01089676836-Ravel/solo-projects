@@ -1,0 +1,17 @@
+{
+  "checkedAt": "2026-09-06T18:58:18.602Z",
+  "node": "v24.19.0",
+  "status": "PASS",
+  "base": "http://127.0.0.1:8765",
+  "totalEvents": 114,
+  "eventId": "evt_fa252138267c3ec6fdb2fa3f4c6ca8d5d798ff923adfa28551937ae29f8d39ee",
+  "sampleId": 6119,
+  "datasetSHA256": "dc6630cd9b1f0f853922fad78a1b6436570d3f1ec863f1dd5c4340ac56bc8a8e",
+  "modelFingerprint": "ccb5178cc239d2c10178b8fb1a87580efe928a09d9a87fd5fd68991f3aa1d2c6",
+  "checks": [
+    "CLI server health",
+    "persisted event list",
+    "list/detail equality",
+    "source metadata preserved"
+  ]
+}

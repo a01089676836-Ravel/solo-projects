@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+data/
+runs/
+reports/*
+!reports/analysis.md
+!reports/training-curve.png
+DeepPCB-source.zip
+yolo11n.pt

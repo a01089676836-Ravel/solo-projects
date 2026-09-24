@@ -1,0 +1,23 @@
+{
+  "checkedAt": "2026-09-22T02:58:58.027Z",
+  "status": "passed",
+  "scenario": "temperature_rise",
+  "mode": "fallback",
+  "reason": "offline_mode",
+  "state": "ANOMALY",
+  "localActuator": {
+    "led": "ORANGE",
+    "buzzer": "OFF",
+    "servo": "STOP"
+  },
+  "evidenceRefs": [
+    {
+      "documentId": "sop-temperature-001",
+      "title": "온도 상승 점검 절차",
+      "source": "local-approved-sop-index"
+    }
+  ],
+  "requiresHumanConfirmation": true,
+  "externalApiCalled": false,
+  "scope": "offline deterministic fallback; no cloud API and no local LLM request"
+}
