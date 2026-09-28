@@ -1,0 +1,8 @@
+process,characteristic,educational_target,check,evidence,response,sop
+DATA,traceability,one ID per unit,route and key validation,validation.json,reject invalid batch,SOP-DATA-01
+FASTEN,torque_nm,10 Nm fictional target,measurement trace and model feature,raw/units.csv,review measurement system and fixture assumptions,SOP-QUALITY-01
+WELD,weld_ratio,1.0 fictional normalized target,measurement variation,raw/units.csv,investigate variation with domain expert,SOP-QUALITY-01
+SEAL,seal_kpa,100 kPa fictional target,measurement trace,raw/units.csv,retain final inspection,SOP-QUALITY-01
+EOL,cycle_s,70 s fictional takt,capacity and queue comparison,stations.csv,simulate additional inspection cell,SOP-EOL-01
+FLOW,completed_per_window,180 input over 210 min,paired experiment,experiment_runs.csv,review buffer and staffing omissions,SOP-FLOW-01
+REVIEW,all_actions,human review only,no equipment command,workflow_trace.json,no automatic process change,SOP-HUMAN-01

@@ -1,0 +1,19 @@
+{
+  "created_utc": "2026-09-25T05:07:28.494068+00:00",
+  "checks": {
+    "sqlite_integrity": true,
+    "source_counts": true,
+    "case_event_totals": true,
+    "category_accounting": true,
+    "independent_sql_cohort": true,
+    "independent_median": true,
+    "elapsed_partition": true,
+    "all_reported_edge_evidence": true,
+    "scenario_zero_identity": true,
+    "source_hash_link": true,
+    "analysis_code_current": true
+  },
+  "passed": true,
+  "evidence_pairs_checked": 990,
+  "scope": "SQL re-derivation and all emitted edge references; not a proof of business causality"
+}

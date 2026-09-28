@@ -1,0 +1,33 @@
+{
+  "created_utc": "2026-09-25T04:37:55.856051+00:00",
+  "source_metadata_api": "https://api.figshare.com/v2/articles/12715853",
+  "citation": "van Dongen, Boudewijn (2019). BPI Challenge 2019. 4TU.ResearchData. Dataset. https://doi.org/10.4121/uuid:d06aff4b-79f0-45e6-8ec8-e19730c248f1",
+  "license": {
+    "value": 1,
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "source_version": 1,
+  "download_url": "https://ndownloader.figshare.com/files/24072995",
+  "source_bytes": 728558522,
+  "sha256": "af63bc687fc4152f2123b05c3af7772b37ef3fce2d3f67f812666c9e356baae7",
+  "md5": "4eb909242351193a61e1c15b9c3cc814",
+  "counts": {
+    "cases": 251734,
+    "events": 1595923,
+    "reordered_cases": 0,
+    "tied_pairs": 233463,
+    "duplicate_candidates": 180913
+  },
+  "categories": {
+    "3-way match, invoice before GR": 221010,
+    "3-way match, invoice after GR": 15182,
+    "Consignment": 14498,
+    "2-way match": 1044
+  },
+  "python": "3.14.6",
+  "sqlite": "3.50.4",
+  "code_sha256": "b01004a13f30e16865a9b69f281798ba94157ca5dd93e55bf3dbc9c3fde6cb5d",
+  "policy": "Keep repeated events; UTC ordering; original order breaks timestamp ties",
+  "duration_seconds": 42.69
+}

@@ -1,0 +1,9 @@
+{
+  "destination": "project root",
+  "verified_utc": "2026-09-27T10:30:07.0482293Z",
+  "transferred_files": 56,
+  "sha256_matches": true,
+  "unit_tests": 21,
+  "browser_checks": 23,
+  "relocated_inference_passed": true
+}

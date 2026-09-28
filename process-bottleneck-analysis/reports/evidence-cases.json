@@ -1,0 +1,219 @@
+[
+  {
+    "case_id": "4507005328_00010",
+    "company": "companyID_0000",
+    "cycle_days": 252.89097222222222,
+    "events": [
+      {
+        "activity": "Create Purchase Order Item",
+        "ts": 1516874280000000,
+        "seq": 0,
+        "source_order": 0,
+        "utc": "2018-01-25T09:58:00+00:00"
+      },
+      {
+        "activity": "Change Quantity",
+        "ts": 1516977780000000,
+        "seq": 1,
+        "source_order": 1,
+        "utc": "2018-01-26T14:43:00+00:00"
+      },
+      {
+        "activity": "Record Goods Receipt",
+        "ts": 1517917440000000,
+        "seq": 2,
+        "source_order": 2,
+        "utc": "2018-02-06T11:44:00+00:00"
+      },
+      {
+        "activity": "Vendor creates invoice",
+        "ts": 1518130740000000,
+        "seq": 3,
+        "source_order": 3,
+        "utc": "2018-02-08T22:59:00+00:00"
+      },
+      {
+        "activity": "Record Invoice Receipt",
+        "ts": 1520528700000000,
+        "seq": 4,
+        "source_order": 4,
+        "utc": "2018-03-08T17:05:00+00:00"
+      },
+      {
+        "activity": "Clear Invoice",
+        "ts": 1538724060000000,
+        "seq": 5,
+        "source_order": 5,
+        "utc": "2018-10-05T07:21:00+00:00"
+      }
+    ]
+  },
+  {
+    "case_id": "4507010734_00010",
+    "company": "companyID_0000",
+    "cycle_days": 227.93541666666667,
+    "events": [
+      {
+        "activity": "Create Purchase Order Item",
+        "ts": 1519030440000000,
+        "seq": 0,
+        "source_order": 0,
+        "utc": "2018-02-19T08:54:00+00:00"
+      },
+      {
+        "activity": "Record Goods Receipt",
+        "ts": 1520348700000000,
+        "seq": 1,
+        "source_order": 1,
+        "utc": "2018-03-06T15:05:00+00:00"
+      },
+      {
+        "activity": "Vendor creates invoice",
+        "ts": 1520463540000000,
+        "seq": 2,
+        "source_order": 2,
+        "utc": "2018-03-07T22:59:00+00:00"
+      },
+      {
+        "activity": "Record Invoice Receipt",
+        "ts": 1521202620000000,
+        "seq": 3,
+        "source_order": 3,
+        "utc": "2018-03-16T12:17:00+00:00"
+      },
+      {
+        "activity": "Clear Invoice",
+        "ts": 1538724060000000,
+        "seq": 4,
+        "source_order": 4,
+        "utc": "2018-10-05T07:21:00+00:00"
+      }
+    ]
+  },
+  {
+    "case_id": "4507012037_00010",
+    "company": "companyID_0000",
+    "cycle_days": 223.89375,
+    "events": [
+      {
+        "activity": "Create Purchase Order Item",
+        "ts": 1519379640000000,
+        "seq": 0,
+        "source_order": 0,
+        "utc": "2018-02-23T09:54:00+00:00"
+      },
+      {
+        "activity": "Record Goods Receipt",
+        "ts": 1521107340000000,
+        "seq": 1,
+        "source_order": 1,
+        "utc": "2018-03-15T09:49:00+00:00"
+      },
+      {
+        "activity": "Vendor creates invoice",
+        "ts": 1521586740000000,
+        "seq": 2,
+        "source_order": 2,
+        "utc": "2018-03-20T22:59:00+00:00"
+      },
+      {
+        "activity": "Record Invoice Receipt",
+        "ts": 1522735560000000,
+        "seq": 3,
+        "source_order": 3,
+        "utc": "2018-04-03T06:06:00+00:00"
+      },
+      {
+        "activity": "Clear Invoice",
+        "ts": 1538724060000000,
+        "seq": 4,
+        "source_order": 4,
+        "utc": "2018-10-05T07:21:00+00:00"
+      }
+    ]
+  },
+  {
+    "case_id": "4507014280_00010",
+    "company": "companyID_0000",
+    "cycle_days": 212.9375,
+    "events": [
+      {
+        "activity": "Create Purchase Order Item",
+        "ts": 1520326260000000,
+        "seq": 0,
+        "source_order": 0,
+        "utc": "2018-03-06T08:51:00+00:00"
+      },
+      {
+        "activity": "Record Goods Receipt",
+        "ts": 1521108180000000,
+        "seq": 1,
+        "source_order": 1,
+        "utc": "2018-03-15T10:03:00+00:00"
+      },
+      {
+        "activity": "Vendor creates invoice",
+        "ts": 1521586740000000,
+        "seq": 2,
+        "source_order": 2,
+        "utc": "2018-03-20T22:59:00+00:00"
+      },
+      {
+        "activity": "Record Invoice Receipt",
+        "ts": 1522735560000000,
+        "seq": 3,
+        "source_order": 3,
+        "utc": "2018-04-03T06:06:00+00:00"
+      },
+      {
+        "activity": "Clear Invoice",
+        "ts": 1538724060000000,
+        "seq": 4,
+        "source_order": 4,
+        "utc": "2018-10-05T07:21:00+00:00"
+      }
+    ]
+  },
+  {
+    "case_id": "4507016539_00010",
+    "company": "companyID_0000",
+    "cycle_days": 203.91180555555556,
+    "events": [
+      {
+        "activity": "Create Purchase Order Item",
+        "ts": 1521106080000000,
+        "seq": 0,
+        "source_order": 0,
+        "utc": "2018-03-15T09:28:00+00:00"
+      },
+      {
+        "activity": "Record Goods Receipt",
+        "ts": 1521817020000000,
+        "seq": 1,
+        "source_order": 1,
+        "utc": "2018-03-23T14:57:00+00:00"
+      },
+      {
+        "activity": "Vendor creates invoice",
+        "ts": 1522101540000000,
+        "seq": 2,
+        "source_order": 2,
+        "utc": "2018-03-26T21:59:00+00:00"
+      },
+      {
+        "activity": "Record Invoice Receipt",
+        "ts": 1522738080000000,
+        "seq": 3,
+        "source_order": 3,
+        "utc": "2018-04-03T06:48:00+00:00"
+      },
+      {
+        "activity": "Clear Invoice",
+        "ts": 1538724060000000,
+        "seq": 4,
+        "source_order": 4,
+        "utc": "2018-10-05T07:21:00+00:00"
+      }
+    ]
+  }
+]

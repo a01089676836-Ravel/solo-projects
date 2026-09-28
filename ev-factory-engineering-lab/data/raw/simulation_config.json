@@ -1,0 +1,19 @@
+{
+  "seed": 20260927,
+  "days": 30,
+  "baseline": {
+    "name": "baseline",
+    "eol_cells": 1,
+    "variation": 1.0,
+    "units": 180,
+    "takt_s": 70.0
+  },
+  "provenance": "100% synthetic; educational assumptions; no company data",
+  "window_s": 12600,
+  "station_order": [
+    "FASTEN",
+    "WELD",
+    "SEAL",
+    "EOL"
+  ]
+}

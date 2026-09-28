@@ -1,0 +1,62 @@
+{
+  "created_utc": "2026-09-25T05:12:21.559Z",
+  "url": "http://127.0.0.1:8770",
+  "browser": "Google Chrome (headless)",
+  "checks": [
+    {
+      "name": "served web assets match reviewed project files",
+      "passed": true
+    },
+    {
+      "name": "desktop dashboard values and verification status",
+      "passed": true
+    },
+    {
+      "name": "Korean, English, whitespace and empty-result search",
+      "passed": true
+    },
+    {
+      "name": "select transition and another case; compare actual API timeline",
+      "passed": true
+    },
+    {
+      "name": "0%, 10%, 20%, 30% scenario choices and unchanged baseline",
+      "passed": true
+    },
+    {
+      "name": "case failure and successful retry clear stale error",
+      "passed": true
+    },
+    {
+      "name": "rapid case changes ignore an older delayed failed response",
+      "passed": true
+    },
+    {
+      "name": "desktop has no page-wide horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390px mobile layout and all interactive controls",
+      "passed": true
+    },
+    {
+      "name": "no uncaught JavaScript errors",
+      "passed": true
+    }
+  ],
+  "page_errors": [],
+  "screenshots": [
+    "desktop-overview.png",
+    "desktop-cases.png",
+    "mobile-overview.png",
+    "mobile-cases.png"
+  ],
+  "passed": true,
+  "browser_version": "153.0.8010.53",
+  "web_sha256": {
+    "web/app.js": "b11212773f75b6038cd0d1200dc2f60d3a9cb564d537e7145de41c1fbcfaf0a9",
+    "web/index.html": "48874d9e58a8b49b8a37f9820b63ceea479de806ebd98d5069bdcba5a53e63e1",
+    "web/style.css": "6c70501c62e644a9bf071b7024585fd7c672d7398b12e504bb14e5e8e9c5cd75"
+  },
+  "app_sha256": "b11212773f75b6038cd0d1200dc2f60d3a9cb564d537e7145de41c1fbcfaf0a9"
+}

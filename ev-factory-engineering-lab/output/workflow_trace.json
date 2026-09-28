@@ -1,0 +1,37 @@
+[
+  {
+    "step": "01 · 데이터 검증",
+    "tool": "validate → SQLite",
+    "evidence": "output/validation.json",
+    "finding": "제품 키·공정 순서·셀 중복 점유를 검증한 데이터만 분석",
+    "sop": "SOP-DATA-01"
+  },
+  {
+    "step": "02 · 병목 후보",
+    "tool": "SQL + 공정 CT 집계",
+    "evidence": "output/stations.csv",
+    "finding": "EOL 평균 CT 86.6초 / 가정 택트 70초",
+    "sop": "SOP-FLOW-01"
+  },
+  {
+    "step": "03 · 모의 개선안",
+    "tool": "paired_simulation(30 seeds)",
+    "evidence": "output/scenarios.csv",
+    "finding": "EOL 셀 1→2의 모의 구간 완료량 차이 +35.7개; 현장 효과 미검증",
+    "sop": "SOP-EOL-01"
+  },
+  {
+    "step": "04 · 검토 용량",
+    "tool": "held-out classifier evaluation",
+    "evidence": "output/model_metrics.json",
+    "finding": "고정 임계값 테스트 검토율 57.1%; 용량 가정 30%와 비교 필요",
+    "sop": "SOP-QUALITY-01"
+  },
+  {
+    "step": "05 · 담당자 검토",
+    "tool": "human review",
+    "evidence": "docs/control-plan.csv",
+    "finding": "교육용 규칙 워크플로. 설비 제어·검사 생략·자동 레시피 변경 없음. LLM 미연결.",
+    "sop": "SOP-HUMAN-01"
+  }
+]

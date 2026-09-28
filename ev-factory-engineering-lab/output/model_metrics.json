@@ -1,0 +1,124 @@
+{
+  "train": {
+    "n": 3240,
+    "positives": 842,
+    "tn": 1499,
+    "fp": 899,
+    "fn": 160,
+    "tp": 682,
+    "precision": 0.43137254901960786,
+    "recall": 0.8099762470308789,
+    "f1": 0.5629385059843169,
+    "review_rate": 0.487962962962963,
+    "prevalence": 0.2598765432098765,
+    "average_precision": 0.595261288966197,
+    "weighted_error_cost": 4099
+  },
+  "validation": {
+    "n": 1080,
+    "positives": 293,
+    "tn": 469,
+    "fp": 318,
+    "fn": 56,
+    "tp": 237,
+    "precision": 0.42702702702702705,
+    "recall": 0.8088737201365188,
+    "f1": 0.5589622641509434,
+    "review_rate": 0.5138888888888888,
+    "prevalence": 0.2712962962962963,
+    "average_precision": 0.5901602029086337,
+    "weighted_error_cost": 1438
+  },
+  "test": {
+    "n": 1080,
+    "positives": 317,
+    "tn": 421,
+    "fp": 342,
+    "fn": 42,
+    "tp": 275,
+    "precision": 0.44570502431118314,
+    "recall": 0.8675078864353313,
+    "f1": 0.588865096359743,
+    "review_rate": 0.5712962962962963,
+    "prevalence": 0.2935185185185185,
+    "average_precision": 0.6092608106621783,
+    "weighted_error_cost": 1182
+  },
+  "threshold": 0.41000000000000003,
+  "target_recall": 0.8,
+  "validation_target_met": true,
+  "review_budget": 0.3,
+  "validation_budget_met": false,
+  "features": [
+    "torque_deviation",
+    "weld_deviation",
+    "seal_deviation",
+    "vibration_mm_s",
+    "ambient_c",
+    "variant_b"
+  ],
+  "split_days": {
+    "train": [
+      1,
+      18
+    ],
+    "validation": [
+      19,
+      24
+    ],
+    "test": [
+      25,
+      30
+    ]
+  },
+  "policy": "Validation recall >= 0.80, then minimum review rate; capacity budget 30% reported, not hidden",
+  "baseline_all_normal": {
+    "n": 1080,
+    "positives": 317,
+    "tn": 763,
+    "fp": 0,
+    "fn": 317,
+    "tp": 0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "review_rate": 0.0,
+    "prevalence": 0.2935185185185185,
+    "average_precision": 0.2935185185185185,
+    "weighted_error_cost": 6340
+  },
+  "baseline_review_all": {
+    "n": 1080,
+    "positives": 317,
+    "tn": 0,
+    "fp": 763,
+    "fn": 0,
+    "tp": 317,
+    "precision": 0.2935185185185185,
+    "recall": 1.0,
+    "f1": 0.45382963493199713,
+    "review_rate": 1.0,
+    "prevalence": 0.2935185185185185,
+    "average_precision": 0.2935185185185185,
+    "weighted_error_cost": 763
+  },
+  "test_intervals": {
+    "recall": [
+      0.8414440920139918,
+      0.8993996433809784
+    ],
+    "precision": [
+      0.4110227629513344,
+      0.4837662337662338
+    ],
+    "average_precision": [
+      0.5516998328060803,
+      0.6703660101286827
+    ],
+    "review_rate": [
+      0.55,
+      0.5940046296296296
+    ]
+  },
+  "uncertainty_note": "300 lot-block bootstrap draws; only 6 test lots; exploratory, not field validity"
+}

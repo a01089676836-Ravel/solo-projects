@@ -1,0 +1,49 @@
+{
+  "created_utc": "2026-09-27T10:28:37.272842+00:00",
+  "seed": 20260927,
+  "environment": {
+    "python": "3.14.6 (tags/v3.14.6:c63aec6, Jun 10 2026, 10:26:10) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.5.1",
+    "pandas": "3.0.5",
+    "sklearn": "1.9.0"
+  },
+  "files": {
+    ".gitignore": "6e2040b150988d6a404a838cc43564da42d9e3e1ce6c602ede904b365116da9c",
+    "build.py": "51cc464b7a0abc89b93a0ede9ec7bb162cbb030e9459de190d5c40a8d9f4e069",
+    "data/raw/events.csv": "e182bb86b778b505aa7c94b37874271bed32ee3f1a5f2332fa6f91e65e821f08",
+    "data/raw/simulation_config.json": "f3f1e1fced072f9338b50ebdd9e76b97d2c0ad52e6e9e31ce2c9d993d9f3b297",
+    "data/raw/units.csv": "6bf18090334727ceff28b5bb063e4e6770bf9578ba9653c3109c6a5cc0b98e5a",
+    "docs/01-SDF-portfolio.md": "be20fd07e42d9e5f5cbc2b99542bf789f7c106b887af56491652f628291074b9",
+    "docs/02-electrification-portfolio.md": "51a34d3051ad9b352db168cfb0a1e5ecf3d46bf2180105cf165c5f4d55181fb7",
+    "docs/control-plan.csv": "2c60b72586c66eff756ba7443afbebc1c8018c4c11d26ef788638148cdab8cdf",
+    "docs/design-and-assumptions.md": "3ecc28869913a40f429728142f0ac0de108051d4544055ce9fce06894838b9d7",
+    "docs/learning-plan.md": "032816019d699b95c294b26d8a4a53b46c215f240cde38a6b415203d12c0eb3e",
+    "docs/queries.sql": "10dd83619bd055684e0b04aa5293d77efde507916674d4292082d936c7ba9860",
+    "docs/sources.md": "aed00cbf7dcb56705f4e3096e378621bd8a2268ba5e5f9dc31b8d27c9f111ff7",
+    "docs/worklog-template.md": "a25ad69c0cecc6c08b1d2c8b8af4c0aedf48ee1623b0d6c9f6b27141399f9cd4",
+    "examples/unit.json": "fc977f7bf7788252b63d3c5070b37fbc0a35f5e8e626a454f3771fa890626de3",
+    "factorylab/__init__.py": "a4d03d89149ea9974595a7e72a89fee86c3dcc10a9b7f334856d3034450e4fb5",
+    "factorylab/data.py": "e69d68dad76b84d6c292bd7da997710e7f0fd5ccb00c1e5580d2ee37c6028700",
+    "factorylab/edge.py": "051372b613c4aed85b816163f5beed7517bed1ffe3225d0078a82d7fd7e4d505",
+    "factorylab/engineering.py": "1698235a454af9f12208ee37ccb711408885a23033a6932ea0a81c002fad0886",
+    "factorylab/modeling.py": "b507b88a602013bd965903ad123a09f572ad81909954e329574f5fafb103dd15",
+    "factorylab/simulation.py": "4170729765a40fd7eae90c2e48b12ddd2df32526bfb1ff0029ebbbfe7a369681",
+    "open-dashboard.cmd": "cefb9c3efd5f4ff8a8bc2e4166055b2787dc05c3663c543b53b1b25e70781f22",
+    "package.json": "6f6df999b0f425b35de5193577841e32d8b084307c93f72dc3252e273e8b4cc8",
+    "README.md": "ffd5a8fd59cbab35ea49177443f9a97961853b393455680ea8cbc003091d2705",
+    "rebuild.ps1": "c3eed3b0a3c05ff129be53f2051e973f3f637d45d8723d048a53f792b64e10d7",
+    "requirements.txt": "8922b1fe3811d88eef018fed485120b971c356dac55316678df43c0097200aec",
+    "tests/browser.mjs": "cfd99a954a4a2fc0b5b76889a69b75ac04122ac6d8816d3c0f47f88258499331",
+    "tests/test_project.py": "86ddcb97c71add4055719fc7aa9bea40c3b48dfa5596bd75606f64f35481e3f3",
+    "verify.py": "cc1509ea7935ea8c2f8996b03703f73b7daa6ffcec982c04c5902f3cb48d11f9",
+    "web/index.html": "924ba9dee8c92e7be1dd2a5a08646a9fe54dc99c2b31c7117c206290c8b7d3a7"
+  },
+  "model_sha256": "517e2da25af2b4118bc601603895e9377230f129bc57734fb0b5f9c71fa266d3",
+  "limits": [
+    "Synthetic data only",
+    "No company-internal data or process settings",
+    "No live sensors, PLC, camera or Jetson hardware validation",
+    "Rule-based workflow; no LLM integration",
+    "Simulation improvement is not plant improvement"
+  ]
+}

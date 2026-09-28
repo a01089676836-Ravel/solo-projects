@@ -1,0 +1,16 @@
+{
+  "executed_utc": "2026-09-27T10:28:42.984Z",
+  "passed": true,
+  "checks": 23,
+  "browser": "Microsoft Edge / Playwright",
+  "viewports": [
+    "1440x1080",
+    "390x844"
+  ],
+  "errors": [],
+  "screenshots": [
+    "dashboard-overview.png",
+    "dashboard-engineering.png",
+    "dashboard-mobile.png"
+  ]
+}

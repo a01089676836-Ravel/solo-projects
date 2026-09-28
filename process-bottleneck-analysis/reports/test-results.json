@@ -1,0 +1,37 @@
+{
+  "created_utc": "2026-09-25T05:07:28.854385+00:00",
+  "runs": [
+    {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python",
+        "pipeline.py",
+        "verify"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "C:\\PROGRA~1\\nodejs\\node.EXE",
+        "--test",
+        "tests/test_web.mjs"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "passed": true,
+  "node_dom_contract_test_executed": true,
+  "browser_interaction_qa": "passed_current_web_assets",
+  "note": "DOM tests use a test double; actual Chrome interaction evidence is recorded separately in reports/browser/results.json"
+}

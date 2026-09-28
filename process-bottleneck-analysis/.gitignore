@@ -1,0 +1,7 @@
+__pycache__/
+data/raw/*.xes
+data/*.sqlite*
+*.building
+node_modules/
+.npm-cache/
+reports/browser/*.zip

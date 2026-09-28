@@ -1,0 +1,163 @@
+{
+  "created_utc": "2026-09-25T04:53:09.4358419Z",
+  "destination": "project root",
+  "file_count": 31,
+  "hashes_match": true,
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 55,
+      "sha256": "27c709ce84b6a0bcc31ed4ab18d432e86a464f8f567bae7aa37e36537bc8952c"
+    },
+    {
+      "path": "00_처음읽기_제작과정과판단근거.md",
+      "bytes": 6876,
+      "sha256": "2536a560b5b971eb6e707c8b919fc920e57426270e0bf43797a6027cd8b34a5b"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 1316,
+      "sha256": "b427fdc91b5d06e0caf6753f38ece83c299c7b797e9c456483c189603ab592e0"
+    },
+    {
+      "path": "download.ps1",
+      "bytes": 1575,
+      "sha256": "3b7b47262354b5418daa425ae43b0194c6472ecdf7d3b4452ae4d0c53ce668db"
+    },
+    {
+      "path": "pipeline.py",
+      "bytes": 25183,
+      "sha256": "6fb823810ef047a99c4679ef965c718e122089492e2dcb6dbd6b85367e3cc56c"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6628,
+      "sha256": "020e8ae49895ca62be239d0fd04b9b7342978e205dcf8196e5cf17be1847a1d1"
+    },
+    {
+      "path": "run.ps1",
+      "bytes": 1137,
+      "sha256": "baf3f35a166ec1ff636bc8a6fe973210c11e9da5e85a98e3c2f02ef849c659a2"
+    },
+    {
+      "path": "server.py",
+      "bytes": 3789,
+      "sha256": "92c614c4b6822e467663494573d750c02522a6d26e2faf9ec62e274e0882ffd9"
+    },
+    {
+      "path": "STATE.md",
+      "bytes": 2989,
+      "sha256": "ea95df7b8f6f8670de01a1468c68a305d3e4accdb0df4daea679c26be62decf8"
+    },
+    {
+      "path": "verify_project.py",
+      "bytes": 1756,
+      "sha256": "38661b387d4ad40600a9032f7dcbbe5193d2b19ea1a95dc9c40624cf7f265fa6"
+    },
+    {
+      "path": "실행.cmd",
+      "bytes": 101,
+      "sha256": "da4b8486c576ad0067076f9610fce87efca5352ce2fe66d35f084bdcd5131e6f"
+    },
+    {
+      "path": "화면열기.url",
+      "bytes": 46,
+      "sha256": "f9d8a82103ab06247ee161c4ea2e4cab1d8b0f549cd6abb4e19d6bd94e3205d4"
+    },
+    {
+      "path": "data\\events.sqlite",
+      "bytes": 191205376,
+      "sha256": "aeba3d987c57339c57c2c6fccf5b5da0819001586dfdc1d27f8080408b66f2cf"
+    },
+    {
+      "path": "data\\raw\\BPI_Challenge_2019.xes",
+      "bytes": 728558522,
+      "sha256": "af63bc687fc4152f2123b05c3af7772b37ef3fce2d3f67f812666c9e356baae7"
+    },
+    {
+      "path": "data\\raw\\source-metadata.json",
+      "bytes": 10637,
+      "sha256": "daf1fc7b9a812283b6411b7d7a2e2e2c75df289cbc741ee459658dfcb56aa872"
+    },
+    {
+      "path": "docs\\evidence-log.md",
+      "bytes": 5517,
+      "sha256": "68534cce5b0cee9f3c0cbfeecdd7c9d1e55117c2c88e438d9584ffeea2f21cae"
+    },
+    {
+      "path": "docs\\metrics-and-decisions.md",
+      "bytes": 4332,
+      "sha256": "702166fa6fb7dce70a893ae541a58279e3f4f98dfdd0ab306a50e41adc6fbc75"
+    },
+    {
+      "path": "reports\\analysis.json",
+      "bytes": 352108,
+      "sha256": "d0fd4b3efcc66e351b51d58f0a6a47bf4e2bdf115051d79b013a45d9ff21818e"
+    },
+    {
+      "path": "reports\\analysis.md",
+      "bytes": 3658,
+      "sha256": "d77745d8b6082e3326c1a016f21fd47a7c44a59accd1b63d6991ad0953c9cda0"
+    },
+    {
+      "path": "reports\\cohort-membership.json",
+      "bytes": 24355308,
+      "sha256": "e9937b1753c400f4289c5112b951f0d18e35afbad7581ef53f9ec3d8f7b10778"
+    },
+    {
+      "path": "reports\\data-manifest.json",
+      "bytes": 1247,
+      "sha256": "941c66399d4ac323d178b8ded7fd1c92d585adb3e2963c7a29a4c8b66252baf2"
+    },
+    {
+      "path": "reports\\evidence-cases.json",
+      "bytes": 5599,
+      "sha256": "4e027b12f53b0c2853ef068b4952b7f0ba151b94411d21cbe62e8e73233cfc71"
+    },
+    {
+      "path": "reports\\test-results.json",
+      "bytes": 920,
+      "sha256": "c41420bf31e5f065caaf30121c3b34dd18d29e432e20b06c59881b9cb303eb98"
+    },
+    {
+      "path": "reports\\test-results.txt",
+      "bytes": 3427,
+      "sha256": "d1a6af2d94ff4533cd16887a9c31e59b82139fa114e6f75894f785d0e52565c6"
+    },
+    {
+      "path": "reports\\verification.json",
+      "bytes": 604,
+      "sha256": "a86aea35bceea44fd1e65eed39bed84381be2401b615d7786abfc5e74cff6c11"
+    },
+    {
+      "path": "tests\\test_pipeline.py",
+      "bytes": 4591,
+      "sha256": "d57dc7674e6f902be8c2a7a8c297fa484fb063f620e8ff7099364db8797904ae"
+    },
+    {
+      "path": "tests\\test_server.py",
+      "bytes": 3263,
+      "sha256": "4e521291865a375440587407ec61c1784405750ae3b8a2e2cd2436a6d99f50a9"
+    },
+    {
+      "path": "tests\\test_web.mjs",
+      "bytes": 3373,
+      "sha256": "acf27f2501032fad7b9270733c01604698779b24a8930c2cc1015592c6141ea1"
+    },
+    {
+      "path": "web\\app.js",
+      "bytes": 6218,
+      "sha256": "e3fa9c7c3956d5767bf464d4dfe89ae0ebcccf0579c1a927d3b205a485f4e06c"
+    },
+    {
+      "path": "web\\index.html",
+      "bytes": 5247,
+      "sha256": "445b027a097811f9bf13a90cc5c1a58fda038bb73fb47c964c02a46d0a2bef45"
+    },
+    {
+      "path": "web\\style.css",
+      "bytes": 4518,
+      "sha256": "6c70501c62e644a9bf071b7024585fd7c672d7398b12e504bb14e5e8e9c5cd75"
+    }
+  ]
+}

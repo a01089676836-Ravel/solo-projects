@@ -1,0 +1,48 @@
+COMMAND: python -m unittest discover -s tests -v
+EXIT CODE: 0
+test_cancelled_case_and_invalid_anchor_order (test_pipeline.AnalysisTests.test_cancelled_case_and_invalid_anchor_order) ... ok
+test_checksum_mismatch_does_not_create_database (test_pipeline.AnalysisTests.test_checksum_mismatch_does_not_create_database) ... ok
+test_legitimate_split_receipt_is_excluded_not_deduplicated (test_pipeline.AnalysisTests.test_legitimate_split_receipt_is_excluded_not_deduplicated) ... ok
+test_outside_window_not_included_in_cycle_edges (test_pipeline.AnalysisTests.test_outside_window_not_included_in_cycle_edges) ... ok
+test_partial_case_not_treated_as_zero_cycle (test_pipeline.AnalysisTests.test_partial_case_not_treated_as_zero_cycle) ... ok
+test_percentiles_small_and_empty (test_pipeline.AnalysisTests.test_percentiles_small_and_empty) ... ok
+test_scenario_absent_edge_and_bounds (test_pipeline.AnalysisTests.test_scenario_absent_edge_and_bounds) ... ok
+test_scenario_zero_identity_and_only_selected_edge_changes (test_pipeline.AnalysisTests.test_scenario_zero_identity_and_only_selected_edge_changes) ... ok
+test_simultaneous_anchors_allow_zero_but_no_negative (test_pipeline.AnalysisTests.test_simultaneous_anchors_allow_zero_but_no_negative) ... ok
+test_stream_parser_namespace_and_original_order (test_pipeline.AnalysisTests.test_stream_parser_namespace_and_original_order) ... ok
+test_timezone_equivalence_and_naive_refusal (test_pipeline.AnalysisTests.test_timezone_equivalence_and_naive_refusal) ... ok
+test_valid_anchors_and_interval_partition (test_pipeline.AnalysisTests.test_valid_anchors_and_interval_partition) ... ok
+test_parameterized_id_does_not_expand_query (test_server.HTTPTests.test_parameterized_id_does_not_expand_query) ... ok
+test_security_headers_and_missing_report (test_server.HTTPTests.test_security_headers_and_missing_report) ... ok
+test_summary_and_case_evidence (test_server.HTTPTests.test_summary_and_case_evidence) ... ok
+test_unknown_case_and_malformed_ids (test_server.HTTPTests.test_unknown_case_and_malformed_ids) ... ok
+test_whitelist_does_not_expose_database_or_source (test_server.HTTPTests.test_whitelist_does_not_expose_database_or_source) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.741s
+
+OK
+
+
+COMMAND: python pipeline.py verify
+EXIT CODE: 0
+{"created_utc": "2026-09-25T05:07:28.494068+00:00", "checks": {"sqlite_integrity": true, "source_counts": true, "case_event_totals": true, "category_accounting": true, "independent_sql_cohort": true, "independent_median": true, "elapsed_partition": true, "all_reported_edge_evidence": true, "scenario_zero_identity": true, "source_hash_link": true, "analysis_code_current": true}, "passed": true, "evidence_pairs_checked": 990, "scope": "SQL re-derivation and all emitted edge references; not a proof of business causality"}
+
+
+COMMAND: C:\PROGRA~1\nodejs\node.EXE --test tests/test_web.mjs
+EXIT CODE: 0
+✔ page IDs, summary, evidence, and exclusions populate (28.3338ms)
+✔ filter and scenario controls change their output (11.2243ms)
+✔ network errors are visible rather than showing successful metrics (1.4238ms)
+✔ search ignores surrounding whitespace and supports case-insensitive English (10.9288ms)
+✔ an obsolete failed case request cannot show an error after a newer success (7.104ms)
+✔ successful retry clears the old error and loading clears the previous timeline (5.9108ms)
+✔ all four scenario choices match the reported outputs (6.1004ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 204.1322

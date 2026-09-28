@@ -1,0 +1,95 @@
+{
+  "created_utc": "2026-09-25T05:12:38.0736195Z",
+  "backup": "local backup directory",
+  "files": [
+    {
+      "path": "web\\app.js",
+      "sha256": "b11212773f75b6038cd0d1200dc2f60d3a9cb564d537e7145de41c1fbcfaf0a9"
+    },
+    {
+      "path": "web\\index.html",
+      "sha256": "48874d9e58a8b49b8a37f9820b63ceea479de806ebd98d5069bdcba5a53e63e1"
+    },
+    {
+      "path": "tests\\test_web.mjs",
+      "sha256": "1a2caeda35db70d8845b9b4ed9afa6e77ffd33e75075ff8c82c49a48e3f70ba9"
+    },
+    {
+      "path": "tests\\browser.mjs",
+      "sha256": "1e104271f55db593e5c2241ff15ef225c0fec1d0d5983a41969bbe0a587e02f6"
+    },
+    {
+      "path": "verify_project.py",
+      "sha256": "3c3e76abe95b98c57b9dc6971b3477257c832163b9511a4f709138c2bcd9885b"
+    },
+    {
+      "path": "package.json",
+      "sha256": "3a77bb1453a001e61c184cd415fa17d1c043f4ed241af0816cc37977ea8c5031"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "7a3e35a1c820eb6dea0135b3a3c6f310458cef3b36e9e1df002a88f64a2d19bd"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "cad8a0957c3b813025e40ffa3099a8e0def761e011b375069937b286e957f6f5"
+    },
+    {
+      "path": "README.md",
+      "sha256": "e97a60966976318c0669750bfba271bca428834c6a6d356d26878847723bf3d7"
+    },
+    {
+      "path": "STATE.md",
+      "sha256": "fc2c91ca0fd130661c4698d4b46ef8503143a681d634cdee7664b891c38556cf"
+    },
+    {
+      "path": "00_처음읽기_제작과정과판단근거.md",
+      "sha256": "274b49210925929d724d2fe42e91823e2adf2ce04f4a1284be63ac2f043e322c"
+    },
+    {
+      "path": "docs\\evidence-log.md",
+      "sha256": "2d7fad86696efc096446a2c36451edb150622a46042e8a9381ced0ad8a257e7f"
+    },
+    {
+      "path": "reports\\test-results.json",
+      "sha256": "0aff2f388bbba6a33f98891ed89ea3ac7a766f97c26edfb50c2a3b61bde7830c"
+    },
+    {
+      "path": "reports\\test-results.txt",
+      "sha256": "4038c1f23a63f81a396b1ff391fee4005d82654524851caadc6d3995377ad70e"
+    },
+    {
+      "path": "reports\\verification.json",
+      "sha256": "b31ae6a61ef8ff818fa84da5fcb9247a57ec73b4bf5b611bb63eea795607879e"
+    },
+    {
+      "path": "reports\\browser\\desktop-cases.png",
+      "sha256": "99f24dd08fdd59b0d8a372199bdfa943a68353535d66fdfbb9185be8d5a1448d"
+    },
+    {
+      "path": "reports\\browser\\desktop-overview.png",
+      "sha256": "2e61a646d23d0d2aac9f977f2b2989e3c1f30240ddeabb211394a2b72f3afc07"
+    },
+    {
+      "path": "reports\\browser\\mobile-cases.png",
+      "sha256": "38ee71426071e322ad6073433cf01932d336c85c2bbec7dcbb595b5f8a53935e"
+    },
+    {
+      "path": "reports\\browser\\mobile-overview.png",
+      "sha256": "db2db74945077e376bcff8168bf8965acfa2eb94a5e0240e1a6c5eeff9a59dc7"
+    },
+    {
+      "path": "reports\\browser\\results.json",
+      "sha256": "8bdaae52c699efe6384bad761be2981386d71fb40550a41e3d654a02e661d94a"
+    },
+    {
+      "path": "reports\\browser\\trace.zip",
+      "sha256": "29a1a7e0634349dc57b21eca70e752bb481a54d25965fb1a83be03dc71201296"
+    },
+    {
+      "path": "reports\\browser\\검증결과.md",
+      "sha256": "810bc176812b1fec684bf0b54bd5fdd154fc5fd0ba7f1a0e37df5f7b1df59921"
+    }
+  ],
+  "hashes_match": true
+}
